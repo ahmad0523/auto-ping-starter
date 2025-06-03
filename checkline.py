@@ -7,7 +7,7 @@ from openpyxl import load_workbook
 import os
 
 # Fungsi untuk membaca IP address dan parameter dari file Excel
-def read_ip_from_excel(filename="internet_list.xlsx"):
+def read_ip_from_excel(filename="line_list.xlsx"):
     file_path = os.path.join(os.path.dirname(__file__), filename)
     wb = load_workbook(file_path)
     ws = wb.active
@@ -51,8 +51,8 @@ def perform_mtr(ip, count=5):
 
 # Fungsi untuk mengirim email dengan body HTML
 def send_email(subject, body, to_email):
-    sender = 'infra.op@mail.royalcorp.co.id'  # Ganti dengan email pengirim
-    smtpHost = '192.213.213.156'  # Ganti dengan SMTP server
+    sender = 'email@pengirim.com'  # Ganti dengan email pengirim
+    smtpHost = 'SMTPSERVER'  # Ganti dengan SMTP server
     smtpPort = 465  # Port SSL untuk koneksi yang aman
 
     # Pesan email
@@ -67,7 +67,7 @@ def send_email(subject, body, to_email):
         smtpServer.ehlo()  # Memastikan server siap menerima koneksi
 
         # Login ke server SMTP dengan kredensial yang benar
-        smtpServer.login(sender, "0sweetCheese(")  # Ganti dengan password yang benar
+        smtpServer.login(sender, "Password-email")  # Ganti dengan password yang benar
 
         # Mengirim email
         smtpServer.sendmail(sender, to_email, msg.as_string())
@@ -134,7 +134,7 @@ def main():
     """
 
     # Kirimkan email dengan hasil
-    toAdd = ['infrateam@mail.royalcorp.co.id','ridwanfsf@royalcorp.co.id']
+    toAdd = ['email1@penerima.com','email2@penerima.com']
     send_email("Line_Status Daily Report", body, toAdd)
     print("Email sent successfully!")
 
