@@ -104,12 +104,6 @@ numpy
 
 ---
 
-### 📜 Lisensi
-
-MIT License (bisa diganti sesuai kebutuhan).
-
----
-
 ### 🤝 Kontribusi
 
 Pull Request dan issue sangat diterima untuk pengembangan lebih lanjut.
